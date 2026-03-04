@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kota King - Order Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .order-summary {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 100px;
+            /* Adjust based on navbar height */
+        }
+
+        #placeOrderBtn {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo"> Kota King</div>
+        <div class="nav-links">
+            <span id="welcome-user" style="font-weight: bold; color: var(--text-dark);"></span>
+            <a href="dashboard.html" style="font-weight: bold; color: var(--primary-color);">New Order</a>
+            <a href="order-history.html">Order History</a>
+        </div>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="menu-section">
+            <h2>Our Menu</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="kota">Kota</button>
+                <button class="filter-btn" data-category="burger">Burgers</button>
+                <button class="filter-btn" data-category="fries">Fries</button>
+                <button class="filter-btn" data-category="drinks">Drinks</button>
+            </div>
+            <div class="food-grid" id="food-grid">
+                <!-- Menu items will be injected here -->
+            </div>
+        </div>
+
+        <div class="order-summary">
+            <h3>Your Order</h3>
+            <div id="cart-items">
+                <p>Your cart is empty. Add items from the menu!</p>
+            </div>
+
+            <div id="checkout-options"
+                style="display: none; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
+                <label style="display:block; margin-bottom:5px; font-weight:bold;">Order Method:</label>
+                <select id="orderType"
+                    style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ddd; border-radius:4px;">
+                    <option value="pickup">Collect at Store</option>
+                    <option value="delivery">Delivery</option>
+                </select>
+
+                <textarea id="orderNotes" placeholder="Delivery Address / Notes"
+                    style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #ddd; border-radius:4px;"></textarea>
+
+                <div class="cart-total" id="cart-total-container">
+                    Total: R<span id="cart-total">0.00</span>
+                </div>
+                <p style="font-size:0.8rem; color:#666; margin-bottom:10px;">* Pay on collection/delivery</p>
+            </div>
+            <button id="placeOrderBtn" disabled>Place Order</button>
+        </div>
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
+</body>
+
+</html>

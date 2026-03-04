@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kota King - Order History</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .history-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo"> Kota King</div>
+        <div class="nav-links">
+            <span id="welcome-user" style="font-weight: bold; color: var(--text-dark);"></span>
+            <a href="dashboard.html">New Order</a>
+            <a href="order-history.html" style="font-weight: bold; color: var(--primary-color);">Order History</a>
+        </div>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="history-container">
+        <h2 class="page-title">My Order History</h2>
+        <div id="my-orders-list">
+            <p style="font-size: 0.9rem; color: #666;">Loading orders...</p>
+        </div>
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
+</body>
+
+</html>

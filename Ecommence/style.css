@@ -1,0 +1,401 @@
+/* Global Variables for Food Theme */
+:root {
+    --primary-color: #e74c3c;
+    /* Appetizing Red */
+    --secondary-color: #f1c40f;
+    /* Mustard Yellow */
+    --text-dark: #2c3e50;
+    --bg-light: #f9f9f9;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* Specific styling for Login/Register pages to keep them centered */
+body.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+form {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.google-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #db4437;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.google-btn:hover {
+    background-color: #c33d2e;
+}
+
+.link {
+    text-align: center;
+}
+
+.link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- Food Website Styles --- */
+
+/* Navbar */
+.navbar {
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.cart-count {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x400.png?text=Delicious+Food');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Menu Section */
+.menu-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--white);
+    color: var(--text-dark);
+    border: 2px solid var(--secondary-color);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.food-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+.food-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.food-info {
+    padding: 1.5rem;
+}
+
+.food-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.food-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.add-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls span {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+.quantity-btn {
+    background-color: #ddd;
+    color: var(--text-dark);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 30px;
+    padding: 0;
+}
+
+
+/* Cart Sidebar (Simple) */
+.cart-overlay {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+    /* Hidden by default */
+    z-index: 1000;
+}
+
+.cart-overlay.open {
+    display: block;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-price {
+    font-weight: bold;
+}
+
+.cart-total {
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+/* --- Receipt / Order Slip Styles --- */
+.order-card {
+    border: 1px dashed #ccc;
+    background: #fff;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.order-status {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.status-pending {
+    background-color: #f39c12;
+    /* Orange */
+    color: white;
+}
+
+.status-preparing {
+    background-color: #3498db;
+    /* Blue */
+    color: white;
+}
+
+.status-completed {
+    background-color: #27ae60;
+    /* Green */
+    color: white;
+}
+
+.status-cancelled {
+    background-color: #95a5a6;
+    /* Grey */
+    color: white;
+}
+
+.order-items {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+
+    /* For user dashboard (dashboard.html, usersdash.html) */
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        /* Stack columns on smaller screens */
+    }
+
+    /* For admin dashboard order items */
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .order-item .order-actions {
+        width: 100%;
+        align-items: flex-start;
+        /* Align left on mobile */
+    }
+}

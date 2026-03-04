@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kota King - Fast Food</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo"> Kota King</div>
+        <div class="nav-links">
+            <a href="#" onclick="filterMenu('all')">Home</a>
+            <a href="#" id="cart-btn">Cart <span class="cart-count" id="cart-count">0</span></a>
+            <a href="login.html">Login</a>
+            <a href="Register.html">Register</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div>
+            <h1>Delicious Food Delivered</h1>
+            <p>The best Kotas, Burgers and Fries in town!</p>
+            <button onclick="document.getElementById('menu').scrollIntoView()" style="margin-top: 20px;">Order
+                Now</button>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <main class="menu-container" id="menu">
+        <div class="filters">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="kota">Kota</button>
+            <button class="filter-btn" data-category="burger">Burgers</button>
+            <button class="filter-btn" data-category="fries">Fries</button>
+            <button class="filter-btn" data-category="drinks">Drinks</button>
+        </div>
+
+        <div class="food-grid" id="food-grid">
+            <!-- Items will be injected here by JS -->
+        </div>
+    </main>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay">
+        <h3>Your Order</h3>
+        <div id="cart-items">
+            <p>Your cart is empty.</p>
+        </div>
+        <div class="cart-total">
+            Total: R<span id="cart-total">0.00</span>
+        </div>
+        <button id="checkout-btn" style="width: 100%; margin-top: 15px;">Checkout</button>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
