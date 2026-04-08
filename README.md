@@ -1,6 +1,6 @@
 # Kota King 
 
-Kota King is a web application for ordering fast food (Kotas, Burgers, Fries) online. It features a user dashboard for placing orders and tracking history, and an admin dashboard for managing orders and users.
+Kota King is a web application for ordering fast food (Kotas, Burgers, Fries) online. It features a user dashboard for placing orders and tracking history and an admin dashboard for managing orders and users.
 
 ## Features
 
@@ -16,7 +16,7 @@ Kota King is a web application for ordering fast food (Kotas, Burgers, Fries) on
 
 ## Technologies Used
 
-- HTML5, CSS3, JavaScript (ES6 Modules)
+- HTML, CSS, JavaScript 
 - Firebase Authentication
 - Firebase Firestore (Database)
 
